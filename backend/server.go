@@ -52,8 +52,7 @@ func returnDatabase() *sql.DB {
 }
 
 func insertIntoDB(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-type", "application/json")
-
+	setHeaders(w)
 	taskName := r.URL.Query()["taskName"][0]
 	taskStatus := 0
 
@@ -74,9 +73,13 @@ func insertIntoDB(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(m)
 }
 
-func getTodoList(w http.ResponseWriter, r *http.Request) {
+func setHeaders(w http.ResponseWriter) {
 	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+}
 
+func getTodoList(w http.ResponseWriter, r *http.Request) {
+	setHeaders(w)
 	db := returnDatabase()
 	defer db.Close()
 	read, err := db.Query("SELECT * FROM todo;")
@@ -105,7 +108,7 @@ func getTodoList(w http.ResponseWriter, r *http.Request) {
 }
 
 func deleteTodo(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
+	setHeaders(w)
 	db := returnDatabase()
 
 	defer db.Close()
