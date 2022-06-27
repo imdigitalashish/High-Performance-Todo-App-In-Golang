@@ -83,8 +83,9 @@ func getTodoList(w http.ResponseWriter, r *http.Request) {
 	db := returnDatabase()
 	defer db.Close()
 	read, err := db.Query("SELECT * FROM todo;")
-
 	var todos []Todo
+
+	// w.WriteHeader(404)
 
 	for read.Next() {
 		var todo Todo

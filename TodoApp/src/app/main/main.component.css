@@ -1,0 +1,39 @@
+.header {
+    margin: 20px;
+}
+
+h1 {
+    font-family: Poppins;
+    font-size: 2em;
+    color: #000000;
+    color: rgb(0, 0, 0);
+}
+.taskStatus {
+  font-family : Poppins;
+  font-weight : bold;
+  font-size : 1em;
+  color : #F7931E;
+  color : rgb(247, 147, 30);
+
+}
+
+.addTask {
+    bottom: 0;
+    position: absolute;
+    width:100vw;
+    margin: 20px;
+    
+}
+
+.addTask > input {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 90vw;
+    padding-left: 20px;
+}
+
+.TodoList {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}

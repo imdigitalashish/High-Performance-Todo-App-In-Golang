@@ -6,18 +6,10 @@ import { TodoService } from './todo.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent  {
 
-  constructor(private todoService: TodoService) {
 
-  }
 
-  ngOnInit(): void {
-    this.todoService.getAllTodo().subscribe(res=>{
-      console.log(res);
-    })
-
-  }
   title = 'TodoApp';
 
   
