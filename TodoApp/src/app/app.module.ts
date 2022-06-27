@@ -11,7 +11,7 @@ import { MainComponent } from './main/main.component'
     MainComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     HttpClientModule
   ],
