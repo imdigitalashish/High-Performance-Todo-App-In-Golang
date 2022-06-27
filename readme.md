@@ -7,10 +7,10 @@ Setup the gocrud.sql file in mysql server
 
 ## For starting up the server
 
-`cd backend`
+`cd backend` <br>
 `./server`
 
 ## For starting up the frontend
 
-`cd TodoApp`
+`cd TodoApp` <br>
 `ng serve`
